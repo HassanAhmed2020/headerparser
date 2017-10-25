@@ -8,7 +8,7 @@
     var headerObj = {IP: null, Language: null, OS: null};
     
     //serve static index.html file using static middleware from the public folder
-    myApp.use('/', express.static(path.join(__dirname, 'public')));
+    //myApp.use('/', express.static(path.join(__dirname, 'public')));
     
     
     //use body parser middleware to capture and parse the request
@@ -16,7 +16,7 @@
     
     
     
-    myApp.get('/:id', function (request, response)
+    myApp.get('/*', function (request, response)
                                 {
                                   headerObj.IP = request.headers['x-forwarded-for'];
                                   var language = request.headers['accept-language'].split(",");
